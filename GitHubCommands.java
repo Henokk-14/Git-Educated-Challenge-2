@@ -3,7 +3,7 @@ import github.tools.responseObjects.*;
 import git.tools.client.GitSubprocessClient;
 
 public class GitHubCommands {
-  public GitSubprocessClient gitSubprocessClient;
+  public static GitSubprocessClient gitSubprocessClient;
   public static void main(String[] args){
     String repoPath = "/Users/henokk_14/Downloads/CSC 109/Git-Educated-Challenge-2";
     GitSubprocessClient gitSubprocessClient = new GitSubprocessClient(repoPath);
@@ -13,7 +13,7 @@ public class GitHubCommands {
     String commitMessage = "added-some-of-the-functions";
     String commit = gitSubprocessClient.gitCommit(commitMessage);
     String push = gitSubprocessClient.gitPush("main");
-    //GitAdd("Helloa.java");
+    GitAdd("Helloa.java");
     System.out.println(status);
     //System.out.println(gitAddFile);
     System.out.println(gitAddAll);
@@ -21,7 +21,7 @@ public class GitHubCommands {
     System.out.println(push);
   }
 
-  public void GitAdd(String filename) {
+  public static void GitAdd(String filename) {
     try {
       String gitAddFile = gitSubprocessClient.gitAddFile(filename);
     } catch (Exception e) {

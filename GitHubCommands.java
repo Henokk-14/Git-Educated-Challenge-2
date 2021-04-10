@@ -9,12 +9,9 @@ public class GitHubCommands {
     GitSubprocessClient gitSubprocessClient = new GitSubprocessClient(repoPath);
     String status = gitSubprocessClient.gitStatus();
     GitAdd( gitSubprocessClient,"GitHubCommands.java");
-    // String gitAddFile = gitSubprocessClient.gitAddFile("GitHubCommands.java");
-    //String gitAddAll = gitSubprocessClient.gitAddAll();
     String commitMessage = "changed-GitAdd-to-a-functions";
-    String commit = gitSubprocessClient.gitCommit(commitMessage);
-    String push = gitSubprocessClient.gitPush("main");
-    //System.out.println(status);
+    Commit(gitSubprocessClient, commitMessage);
+    Push(gitSubprocessClient, "main");
   }
   public static void main(String[] args){
      GitHubCommands run =  new GitHubCommands();
@@ -26,8 +23,21 @@ public class GitHubCommands {
       String gitAddFile = gitSubprocessClient.gitAddFile(filename);
       System.out.println(status);
     } catch (Exception e) {
-      e.printStackTrace();
       System.out.println("Error file name entered incorrect file:"+ filename+ " Doesn't exist in scope" );
+    }
+  }
+  public void Commit(GitSubprocessClient gitSubprocessClient, String CommitMsg){
+    try{
+      String commit = gitSubprocessClient.gitCommit(CommitMsg);
+    } catch (Exception e) {
+      e.printStackTrace();
+    }
+  }
+  public void Push(GitSubprocessClient gitSubprocessClient, String BranchName){
+    try{
+      String push = gitSubprocessClient.gitPush(BranchName);
+    } catch (Exception e) {
+      e.printStackTrace();
     }
   }
 

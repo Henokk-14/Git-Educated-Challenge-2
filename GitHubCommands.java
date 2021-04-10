@@ -4,12 +4,11 @@ import git.tools.client.GitSubprocessClient;
 
 public class GitHubCommands {
   GitSubprocessClient gitSubprocessClient;
-  String filename = "Hello";
   public GitHubCommands(){
     String repoPath = "/Users/henokk_14/Downloads/CSC 109/Git-Educated-Challenge-2";
     GitSubprocessClient gitSubprocessClient = new GitSubprocessClient(repoPath);
     String status = gitSubprocessClient.gitStatus();
-    this.GitAdd( gitSubprocessClient,"GitHubCommands.java");
+    GitAdd( gitSubprocessClient,"GitHubCommands.java");
     // String gitAddFile = gitSubprocessClient.gitAddFile("GitHubCommands.java");
     //String gitAddAll = gitSubprocessClient.gitAddAll();
     String commitMessage = "changed-GitAdd-to-a-functions";
@@ -21,7 +20,7 @@ public class GitHubCommands {
      GitHubCommands run =  new GitHubCommands();
   }
 
-  public void GitAdd(GitSubprocessClient gitSubprocessClient,String filename) {
+  public synchronized void GitAdd(GitSubprocessClient gitSubprocessClient,String filename) {
     try {
       String gitAddFile = gitSubprocessClient.gitAddFile(filename);
       System.out.println("added "+ filename);

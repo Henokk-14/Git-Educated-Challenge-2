@@ -23,9 +23,7 @@ public class GitHubCommands {
   public void GitAdd(GitSubprocessClient gitSubprocessClient,String filename) {
     try {
       String status = gitSubprocessClient.gitStatus();
-      System.out.println(status);
       String gitAddFile = gitSubprocessClient.gitAddFile(filename);
-      System.out.println("added "+ filename);
       System.out.println(status);
     } catch (Exception e) {
       e.printStackTrace();

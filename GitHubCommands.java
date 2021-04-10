@@ -40,5 +40,4 @@ public class GitHubCommands {
       e.printStackTrace();
     }
   }
-
 }

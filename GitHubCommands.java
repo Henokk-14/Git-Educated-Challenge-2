@@ -3,25 +3,25 @@ import github.tools.responseObjects.*;
 import git.tools.client.GitSubprocessClient;
 
 public class GitHubCommands {
-  public static GitSubprocessClient gitSubprocessClient;
-  public static void main(String[] args){
+  GitSubprocessClient gitSubprocessClient;
+  String filename = "Hello";
+  public GitHubCommands(){
     String repoPath = "/Users/henokk_14/Downloads/CSC 109/Git-Educated-Challenge-2";
     GitSubprocessClient gitSubprocessClient = new GitSubprocessClient(repoPath);
     String status = gitSubprocessClient.gitStatus();
-   // GitAdd("GitHubCommands.java");
-    String gitAddFile = gitSubprocessClient.gitAddFile("GitHubCommands.java");
+    this.GitAdd( gitSubprocessClient,"GitHubCommands.java");
+    // String gitAddFile = gitSubprocessClient.gitAddFile("GitHubCommands.java");
     //String gitAddAll = gitSubprocessClient.gitAddAll();
     String commitMessage = "added-some-of-the-functions";
     String commit = gitSubprocessClient.gitCommit(commitMessage);
     String push = gitSubprocessClient.gitPush("main");
     System.out.println(status);
-    //System.out.println(gitAddFile);
-//    System.out.println(gitAddAll);
-//    System.out.println(commit);
-//    System.out.println(push);
+  }
+  public static void main(String[] args){
+     GitHubCommands run =  new GitHubCommands();
   }
 
-  public static void GitAdd(String filename) {
+  public void GitAdd(GitSubprocessClient gitSubprocessClient,String filename) {
     try {
       String gitAddFile = gitSubprocessClient.gitAddFile(filename);
     } catch (Exception e) {

@@ -9,7 +9,7 @@ public class GitHubCommands {
     GitSubprocessClient gitSubprocessClient = new GitSubprocessClient(repoPath);
     String status = gitSubprocessClient.gitStatus();
     GitAdd( gitSubprocessClient,"GitHubCommands.java");
-    String commitMessage = "changed-GitAdd-to-a-functions";
+    String commitMessage = "added-Commit,Push-to-functions";
     Commit(gitSubprocessClient, commitMessage);
     Push(gitSubprocessClient, "main");
   }

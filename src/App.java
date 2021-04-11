@@ -2,12 +2,11 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
-
-
 import javax.swing.JComponent;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JRadioButton;
 
 
 public class App extends JPanel {
@@ -19,7 +18,19 @@ public class App extends JPanel {
         FlowLayout layout = new FlowLayout();
         DrawingPanel.setLayout(layout);
         
+        JRadioButton darkModeButton = new JRadioButton("Dark Mode");
+        JRadioButton addButton = new JRadioButton("Add");
+        JRadioButton commitButton = new JRadioButton("Commit");
+        JRadioButton pushButton = new JRadioButton("Push");
+        JRadioButton sButton = new JRadioButton("S");
         
+        DrawingPanel.add(darkModeButton);
+        DrawingPanel.add(addButton);
+        DrawingPanel.add(commitButton);
+        DrawingPanel.add(pushButton);
+        DrawingPanel.add(sButton);
+        
+        this.add(DrawingPanel);
         
     }
 	

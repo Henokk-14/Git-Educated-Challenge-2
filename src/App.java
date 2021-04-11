@@ -2,17 +2,13 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
-<<<<<<< HEAD
 import java.awt.GridLayout;
 
-=======
->>>>>>> 02414052c067b32152c48d0c0b676faf702b773f
 import javax.swing.JComponent;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
-<<<<<<< HEAD
 import javax.swing.JSplitPane;
 import javax.swing.JTextField;
 
@@ -21,34 +17,6 @@ public class App extends JPanel {
 	
 	Color lightMode = Color.white;
 	Color darkMode = Color.getHSBColor(convertRGBtoHSV(13,13,13)[0],convertRGBtoHSV(13,13,13)[1],convertRGBtoHSV(13,13,13)[2]);
-=======
-
-
-public class App extends JPanel {
-
-	public App() {
-        super(new BorderLayout());
-		
-        JPanel DrawingPanel = new JPanel();
-        FlowLayout layout = new FlowLayout();
-        DrawingPanel.setLayout(layout);
-        
-        JRadioButton darkModeButton = new JRadioButton("Dark Mode");
-        JRadioButton addButton = new JRadioButton("Add");
-        JRadioButton commitButton = new JRadioButton("Commit");
-        JRadioButton pushButton = new JRadioButton("Push");
-        JRadioButton sButton = new JRadioButton("S");
-        
-        DrawingPanel.add(darkModeButton);
-        DrawingPanel.add(addButton);
-        DrawingPanel.add(commitButton);
-        DrawingPanel.add(pushButton);
-        DrawingPanel.add(sButton);
-        
-        this.add(DrawingPanel);
-        
-    }
->>>>>>> 02414052c067b32152c48d0c0b676faf702b773f
 	
 	public float[] convertRGBtoHSV(int R, int B, int G) {
 		float[] hsb = Color.RGBtoHSB(17,23,33,null);

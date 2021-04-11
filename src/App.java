@@ -21,6 +21,7 @@ public class App extends JPanel {
 	Color lightMode = Color.white;
 	Color darkMode = Color.getHSBColor(convertRGBtoHSV(25,25,25)[0],convertRGBtoHSV(25,25,25)[1],convertRGBtoHSV(25,25,25)[2]);
 	Color greyMode = Color.getHSBColor(convertRGBtoHSV(40,40,40)[0],convertRGBtoHSV(40,40,40)[1],convertRGBtoHSV(40,40,40)[2]);
+	Color buttonColor = Color.getHSBColor(convertRGBtoHSV(60,60,60)[0],convertRGBtoHSV(60,60,60)[1],convertRGBtoHSV(60,60,60)[2]);
 	
 	public float[] convertRGBtoHSV(int R, int B, int G) {
 		float[] hsb = Color.RGBtoHSB(R,G,B,null);
@@ -48,10 +49,23 @@ public class App extends JPanel {
         
         // CREATING BUTTONS
         JRadioButton darkModeButton = new JRadioButton("Dark Mode");
+        JButton statusButton = new JButton("Status");
         JButton addButton = new JButton("Add");
         JButton commitButton = new JButton("Commit");
         JButton pushButton = new JButton("Push");
         JButton clButton = new JButton("Clear Input");
+        
+        // SETTING BUTTONS
+        statusButton.setBackground(buttonColor);
+        statusButton.setForeground(Color.white);
+        addButton.setBackground(buttonColor);
+        addButton.setForeground(Color.white);
+        commitButton.setBackground(buttonColor);
+        commitButton.setForeground(Color.white);
+        pushButton.setBackground(buttonColor);
+        pushButton.setForeground(Color.white);
+        clButton.setBackground(buttonColor);
+        clButton.setForeground(Color.white);
         
         // CREATING TITLE TEXT
         JPanel titlePanel = new JPanel(new FlowLayout());
@@ -71,6 +85,7 @@ public class App extends JPanel {
         // RADIO BUTTONS
         JPanel southPanel = new JPanel(new FlowLayout());
         southPanel.setBackground(darkMode);
+        southPanel.add(statusButton);
         southPanel.add(addButton);
         southPanel.add(commitButton);
         southPanel.add(pushButton);

@@ -68,15 +68,15 @@ public class App extends JPanel {
         
         // SETTING BUTTONS
         statusButton.setBackground(buttonColor);
-        statusButton.setForeground(Color.white);
+        statusButton.setForeground(Color.CYAN);
         addButton.setBackground(buttonColor);
-        addButton.setForeground(Color.white);
+        addButton.setForeground(Color.CYAN);
         commitButton.setBackground(buttonColor);
-        commitButton.setForeground(Color.white);
+        commitButton.setForeground(Color.CYAN);
         pushButton.setBackground(buttonColor);
-        pushButton.setForeground(Color.white);
+        pushButton.setForeground(Color.CYAN);
         clButton.setBackground(buttonColor);
-        clButton.setForeground(Color.white);
+        clButton.setForeground(Color.CYAN);
         
         // CREATING TITLE TEXT
         JPanel titlePanel = new JPanel(new FlowLayout());
@@ -89,7 +89,7 @@ public class App extends JPanel {
         northPanel.setBackground(darkMode);
         northPanel.add(darkModeButton);
         darkModeButton.setBackground(darkMode);
-        darkModeButton.setForeground(Color.white);
+        darkModeButton.setForeground(Color.WHITE);
         darkModeButton.setSelected(true);
         
         
@@ -145,15 +145,15 @@ public class App extends JPanel {
                 if (darkModeButton.isSelected() == true) {
                 	// dark mode enabled
                 	statusButton.setBackground(buttonColor);
-                    statusButton.setForeground(Color.white);
+                    statusButton.setForeground(Color.CYAN);
                     addButton.setBackground(buttonColor);
-                    addButton.setForeground(Color.white);
+                    addButton.setForeground(Color.CYAN);
                     commitButton.setBackground(buttonColor);
-                    commitButton.setForeground(Color.white);
+                    commitButton.setForeground(Color.CYAN);
                     pushButton.setBackground(buttonColor);
-                    pushButton.setForeground(Color.white);
+                    pushButton.setForeground(Color.CYAN);
                     clButton.setBackground(buttonColor);
-                    clButton.setForeground(Color.white);
+                    clButton.setForeground(Color.CYAN);
                     
                 	titlePanel.setBackground(darkMode);
                     TitleText.setForeground(Color.white);

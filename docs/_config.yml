@@ -1,0 +1,6 @@
+name: GitHubChallenge2
+title: "GitHub Made Easy"
+description: "Use this website to learn the detailes and setup/usage of this application."
+plugins:
+  - jemoji
+theme: jekyll-theme-hacker

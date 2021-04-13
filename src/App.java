@@ -14,7 +14,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class App extends JPanel {
-    private static String repoPath;
+    private String repoPath = "";
     private GitSubprocessClient Client;
     private GitHubCommands command;
 
@@ -31,7 +31,6 @@ public class App extends JPanel {
         float hue = hsb[0];
         float saturation = hsb[1];
         float brightness = hsb[2];
-        System.out.println("RGB [" + R + "," + G + "," + B + "] converted to HSB [" + hue + "," + saturation + "," + brightness + "]" );
         return hsb;
 	}
 
@@ -131,7 +130,6 @@ public class App extends JPanel {
         darkModeButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                System.out.println("Dark Mode: " + darkModeButton.isSelected());
                 //TODO DO STATUS CODE HERE
                 if (darkModeButton.isSelected() == true) {
                 	// dark mode enabled
@@ -202,9 +200,18 @@ public class App extends JPanel {
         statusButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                repoPath = inputFrame.getText();
-                Client = new GitSubprocessClient(repoPath);
+                if (repoPath == "") {
+                    if(inputFrame.getText().length() > 2) {
+                        repoPath = inputFrame.getText();
+                    }
+                    Client = new GitSubprocessClient(repoPath);
+                } else {
+                    Client = new GitSubprocessClient(repoPath);
+                }
                 String outputTxt = command.GitStatus(Client, repoPath);
+                if(outputTxt == "You have entered the wrong repo please try again:)"){
+                    repoPath = "";
+                }
                 outputFrame.setText(outputTxt);
             }
         });

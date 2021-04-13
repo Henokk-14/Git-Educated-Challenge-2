@@ -216,8 +216,6 @@ public class App extends JPanel {
         addButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                System.out.println("Add");
-                //TODO DO ADD CODE HERE
                 String fileName = inputFrame.getText();
                 outputFrame.setText(command.GitAdd(Client, fileName));
             }
@@ -228,7 +226,8 @@ public class App extends JPanel {
             public void actionPerformed(ActionEvent e) {
                 System.out.println("Commit");
                 //TODO DO COMMIT CODE HERE
-
+                String commitMsg = inputFrame.getText();
+                outputFrame.setText(command.Commit(Client, commitMsg));
             }
         });
 

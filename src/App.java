@@ -214,7 +214,7 @@ public class App extends JPanel {
                 }
                 outputFrame.setText(outputTxt);
 
-                
+
             }
         });
 

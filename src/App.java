@@ -28,13 +28,9 @@ public class App extends JPanel {
 
 	public float[] convertRGBtoHSV(int R, int B, int G) {
 		float[] hsb = Color.RGBtoHSB(R,G,B,null);
-
         float hue = hsb[0];
-
         float saturation = hsb[1];
-
         float brightness = hsb[2];
-
         System.out.println("RGB [" + R + "," + G + "," + B + "] converted to HSB [" + hue + "," + saturation + "," + brightness + "]" );
         return hsb;
 	}
@@ -224,8 +220,6 @@ public class App extends JPanel {
         commitButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                System.out.println("Commit");
-                //TODO DO COMMIT CODE HERE
                 String commitMsg = inputFrame.getText();
                 outputFrame.setText(command.Commit(Client, commitMsg));
             }
@@ -234,17 +228,15 @@ public class App extends JPanel {
         pushButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                System.out.println("Push");
-                //TODO DO PUSH CODE HERE
+                String branchName = inputFrame.getText();
+                outputFrame.setText(command.Push(Client, branchName));
             }
         });
 
         clButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                System.out.println("Clear Input");
                 inputFrame.setText("");
-
             }
         });
 

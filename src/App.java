@@ -213,6 +213,8 @@ public class App extends JPanel {
                     repoPath = "";
                 }
                 outputFrame.setText(outputTxt);
+
+                
             }
         });
 

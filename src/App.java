@@ -1,9 +1,11 @@
-/*
+package src;/*
  * Title: Git-Educated-Challenge-2
  * GUI made by: Andrew Matos & Jack Handy
  * Backend Programming by: 
  * Date: 4/11/21
  */
+
+import git.tools.client.GitSubprocessClient;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -25,7 +27,9 @@ import javax.swing.JTextArea;
 
 
 public class App extends JPanel {
-	
+    String repoPath = "/Users/henokk_14/Downloads/CSC 109/Git-Educated-Challenge-2/src";
+    GitSubprocessClient gitSubprocessClient1 = new GitSubprocessClient(repoPath);
+    GitHubCommands git = new GitHubCommands();
 	Color lightMode = Color.white;
 	Color darkMode = Color.getHSBColor(convertRGBtoHSV(25,25,25)[0],convertRGBtoHSV(25,25,25)[1],convertRGBtoHSV(25,25,25)[2]);
 	Color greyMode = Color.getHSBColor(convertRGBtoHSV(40,40,40)[0],convertRGBtoHSV(40,40,40)[1],convertRGBtoHSV(40,40,40)[2]);
@@ -43,13 +47,12 @@ public class App extends JPanel {
          
         float brightness = hsb[2];
          
-        System.out.println("RGB [" + R + "," + G + "," + B + "] converted to HSB [" + hue + "," + saturation + "," + brightness + "]" );
+        //System.out.println("RGB [" + R + "," + G + "," + B + "] converted to HSB [" + hue + "," + saturation + "," + brightness + "]" );
         return hsb;
 	}
 
 	public App() {
         super(new BorderLayout());
-		
         // CREATING JFRAME
         JPanel DrawingPanel = new JPanel();
         BorderLayout layout = new BorderLayout();
@@ -213,6 +216,7 @@ public class App extends JPanel {
             public void actionPerformed(ActionEvent e) {
                 System.out.println("Status");
                 //TODO DO STATUS CODE HERE
+
             }
         });
         
@@ -221,6 +225,9 @@ public class App extends JPanel {
             public void actionPerformed(ActionEvent e) {
                 System.out.println("Add");
                 //TODO DO ADD CODE HERE
+                //git.GitAdd(gitSubprocessClient, "GitHubCommands.java");
+                String File = inputFrame.getText().replaceAll(" ", "");
+                outputFrame.setText(git.GitAdd(gitSubprocessClient1, File));
             }
         });
         
@@ -283,7 +290,7 @@ public class App extends JPanel {
 	
 	@Override  
     public Dimension getPreferredSize() {  
-        return new Dimension(800,500);  // CHANGES JFRAME DIMENSIONS
+        return new Dimension(1000,500);  // CHANGES JFRAME DIMENSIONS
     }  
 
     public static void main(String[] args) {
